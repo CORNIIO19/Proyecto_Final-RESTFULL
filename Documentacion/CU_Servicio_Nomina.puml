@@ -1,0 +1,20 @@
+@@startuml "Casos de Usos Servicio Nomina"
+
+left to right direction
+
+actor administrados as adm
+
+package "administracion de Nomina"{
+    usecase "Agregar Nomina" as CU1
+    usecase "Modificar Nomina" as CU2
+    usecase "Actualizar Nomina" as CU3
+    usecase "Eliminar Nomina" as CU4
+}
+
+adm --> CU1
+adm --> CU2
+adm --> CU3
+adm --> CU4
+
+
+@@enduml

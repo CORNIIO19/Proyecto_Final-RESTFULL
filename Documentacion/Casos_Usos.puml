@@ -1,0 +1,35 @@
+@startuml "Casos de uso Administrador"
+
+left to right direction 
+actor administrador as adm
+
+package "Integracion de servicios"{
+
+package "Administracion de empleados"{
+    usecase "Agregar empleado" as CU1
+    usecase "eliminar empleado" as CU2
+    usecase "modificar empleado" as CU3
+}
+
+package "Administracion de Nomina" as admNomina{
+    usecase "Agregar Nomina por empleado" as NU1
+    usecase "eliminar Nomina por empleado" as NU2
+    usecase "modificar Nomina por empleado" as NU3
+}
+
+}
+
+
+'casos de uso para el servicio de administracion de empleados 
+adm --> CU1
+adm --> CU2
+adm --> CU3
+'casos de uso para el servicio de administracion de la nomina
+adm --> NU1
+adm --> NU2
+adm --> NU3
+
+
+
+
+@enduml

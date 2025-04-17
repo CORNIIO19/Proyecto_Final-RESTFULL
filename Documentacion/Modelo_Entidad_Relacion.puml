@@ -1,0 +1,27 @@
+@startuml "Modelo Entidad-Relacion"
+
+left to right direction
+title "Modelo Entidad-Relacion DAL"
+
+
+entity Empleado{
+
+    PK: int id
+    ..
+    String Nombre
+    Date Fecha_Ingreso
+}
+
+entity Nomina{
+    PK: int id
+    ..
+    String Rol
+    Doube Salario
+    ..
+    FK: int id_Empleado
+}
+
+
+Empleado "1"--"1..*" Nomina
+
+@enduml

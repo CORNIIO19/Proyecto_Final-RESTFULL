@@ -1,0 +1,22 @@
+@startuml "Casos de uso Administrador"
+
+left to right direction 
+actor administrador as adm
+
+
+package "Administracion de empleados"{
+    usecase "Agregar empleado" as CU1
+    usecase "eliminar empleado" as CU2
+    usecase "modificar empleado" as CU3
+}
+
+
+'casos de uso para el servicio de administracion de empleados 
+adm --> CU1
+adm --> CU2
+adm --> CU3
+
+
+
+
+@enduml

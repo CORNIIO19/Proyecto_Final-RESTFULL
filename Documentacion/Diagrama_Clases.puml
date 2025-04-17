@@ -1,0 +1,41 @@
+@startuml "Diagrama de Clases "
+
+title "DIAGRAMA DE CLASES"
+
+class Empleado {
+    -id: int
+    -Nombre: string
+    -Fecha_Ingreso: date
+    -Nomina: List<Nomina>
+    ..
+    +Empledos()
+    +Empleado(int id, string Nombre, date Fecha_Ingreso)
+    ..
+    +getId(): int
+    +setId(int id):void
+    +getNombre():string
+    +setNombre(string Nombre):void
+    +getFecha_Ingreso():date
+    +setFecha_Ingreso(date Fecha_Ingreso):void
+}
+
+entity Nomina{
+    -id: int
+    -Rol: string
+    -Salario: double
+    -Empleados: List<Empleado>
+    ..
+    +Nomina()
+    +Nomina(int id, string Rol, double Salario)
+    ..
+    +getId():int
+    +setId(int id):void
+    +getRol():string
+    +setRol(string Rol):void
+    +getSalario():double
+    +setSalario(double Salario):void
+}
+
+
+
+@enduml

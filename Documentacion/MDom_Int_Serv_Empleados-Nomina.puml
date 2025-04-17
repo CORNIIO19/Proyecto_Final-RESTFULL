@@ -1,0 +1,26 @@
+@startuml "Integracion Servicios Administracion EMPLEADOS/NOMINA"
+left to right direction
+title "MODELO DE DOMINIO"
+
+object Empleado
+object Salarios
+object Administrador
+object Empresa
+object Nomina
+object Roles
+
+Empleado --> Salarios : tiene
+
+Salarios->Roles : depende
+
+Administrador-->Nomina : gestiona
+
+Administrador-->Empleado : gestiona
+
+Empresa->Administrador : tiene
+
+Nomina --> Salarios: tiene
+
+
+
+@enduml

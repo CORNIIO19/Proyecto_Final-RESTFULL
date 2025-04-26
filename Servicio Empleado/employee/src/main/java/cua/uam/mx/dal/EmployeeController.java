@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import cua.uam.mx.dal.entities.Employee;
 
 @RestController
@@ -17,11 +18,17 @@ class EmployeeController {
 
   private final EmployeeRepository repository;
 
-  EmployeeController(EmployeeRepository repository) {
+  private final EmployeeModelAssembler assembler;
+
+  EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler ) {
     this.repository = repository;
+    this.assembler = assembler;
   }
 
 
+
+
+  
   // Aggregate root
   // tag::get-aggregate-root[]
   @GetMapping("/employee")
@@ -42,7 +49,7 @@ class EmployeeController {
     
     return repository.findById(id)
       .orElseThrow(() -> new EmployeeNotFoundException(id));
-  }
+  } 
 
   @PutMapping("/employee/{id}")
   Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Integer id) {

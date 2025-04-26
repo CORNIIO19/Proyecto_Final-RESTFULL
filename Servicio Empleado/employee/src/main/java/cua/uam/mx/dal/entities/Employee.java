@@ -2,6 +2,8 @@ package cua.uam.mx.dal.entities;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,6 +16,8 @@ public class Employee {
     @GeneratedValue
     private int id;
     private String name;
+    // deserialize de la fecha de ingreso
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fecha_ingreso;
     
 

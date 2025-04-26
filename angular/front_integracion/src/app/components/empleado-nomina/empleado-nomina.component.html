@@ -1,0 +1,34 @@
+<h2>Lista de empleados</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Identificador</th>
+            <th>Nombre</th>
+            <th>Fecha Ingreso</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employee">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.fecha_ingreso }}</td>
+        </tr>
+    </tbody>
+</table>
+<h2>Lista de nominas</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Identificador</th>
+            <th>Rol</th>
+            <th>Salario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nomina of nomina">
+            <td>{{ nomina.id }}</td>
+            <td>{{ nomina.rol }}</td>
+            <td>{{ nomina.salario }}</td>
+        </tr>
+    </tbody>
+</table>
